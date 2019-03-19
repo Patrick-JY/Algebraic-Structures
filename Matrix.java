@@ -3,13 +3,13 @@ public class Matrix {
 	private int rownum;
 	private int colnum;
 	private double[][] matrixArray;
-	private SymmetricGroup symGroup = null;
+	//private SymmetricGroup symGroup = null;
 
 	//creates an empty matrix with specified dimensions.
 	public Matrix(int rownum,int colnum){
-		if(rownum == colnum){
+		/*if(rownum == colnum){
 			symGroup = new SymmetricGroup(rownum);
-		}
+		}*/
 		this.rownum = rownum;
 		this.colnum = colnum;
 		this.matrixArray = new double[rownum][colnum];
@@ -19,9 +19,9 @@ public class Matrix {
 		this.rownum = matrixArray.length;
 		this.colnum = matrixArray[0].length;
 
-		if(this.rownum == this.colnum){
+		/*if(this.rownum == this.colnum){
 			symGroup = new SymmetricGroup(rownum);
-		}
+		}*/
 		this.matrixArray = matrixArray;
 	}
 
@@ -103,7 +103,7 @@ public class Matrix {
 		return this.matrixArray[rowCoord][colCoord];
 	}
 
-	public BigDecimal getDeterminant(){
+	public BigDecimal getDeterminant(SymmetricGroup symGroup){
 		if(rownum != colnum){
 			throw new NoDeterminantException();
 		}
