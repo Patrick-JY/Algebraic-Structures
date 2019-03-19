@@ -9,13 +9,13 @@ public class SymmetricGroup extends Group<Permutation>{
 	
 	public SymmetricGroup (int amountOfElements){
 		this.amountOfElements = amountOfElements;
-		groupElements = new Permutation[Main.factorial(amountOfElements)];
+		groupElements = new Permutation[patrickMath.factorial(amountOfElements)]; 
 		//generating the elements of the group
 		if(amountOfElements < 1){
 			throw new InvalidSizeException();
 		}
 		else {
-			
+
 		}
 			
 	}
@@ -33,7 +33,7 @@ public class SymmetricGroup extends Group<Permutation>{
 		return null;
 	}
 
-
+	
 
 
 }
