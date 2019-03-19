@@ -13,7 +13,7 @@ public abstract class Group<Type>{
 	public abstract Type operation(Type object1,Type object2);
 
 	
-
+	public abstract String toString();
 
 
 

@@ -20,12 +20,14 @@ public class Permutation {
 	
 	*/
 
-	public String print(){
-		String container = "";
+	public String toString(){
+		String container = "( ";
 		for (int i = 0; i < this.permArray.length; i++){
 			container += this.permArray[i] + " ";
 		}
+		container += ")";
 		return container;
+
 	}
 
 	public int disorderness(){
