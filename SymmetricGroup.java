@@ -15,7 +15,9 @@ public class SymmetricGroup extends Group<Permutation>{
 			throw new InvalidSizeException();
 		}
 		else {
-
+			
+			
+			
 		}
 			
 	}
