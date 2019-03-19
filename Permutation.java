@@ -19,7 +19,9 @@ public class Permutation {
 	permutations are in this form.
 	
 	*/
-
+	public int[] getArr(){
+		return permArray;
+	}
 	public String toString(){
 		String container = "( ";
 		for (int i = 0; i < this.permArray.length; i++){

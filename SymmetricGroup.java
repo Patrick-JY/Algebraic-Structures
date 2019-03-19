@@ -59,7 +59,9 @@ public class SymmetricGroup extends Group<Permutation>{
 	}
 
 	
-
+	public Permutation[] getArr(){
+		return groupElements;
+	}
 
 	public Permutation getElement(int index){
 		return groupElements[index];
@@ -69,11 +71,45 @@ public class SymmetricGroup extends Group<Permutation>{
 	}
 
 	public Permutation getInverse(Permutation object){
-		return null;
+		int[] arr = object.getArr();
+		if (arr.length != amountOfElements){
+			return null; //potentially should throw an error here
+		}
+		for (int i = 0; i < arr.length/2; i++){
+			int temp = arr[i];
+			arr[i] = arr[amountOfElements - i - 1];
+			arr[amountOfElements - i - 1] = temp;
+		}
+
+		return new Permutation(arr);
 	}
 
 	public Permutation operation(Permutation object1, Permutation object2){
-		return null;
+		int[] arr1 = object1.getArr();
+		int[] arr2 = object2.getArr();
+		int[] arr3 = new int[amountOfElements];
+
+		/*
+
+		1	2	3	4
+		
+		|	|	|	| ---> various bijections
+
+		3	1	2	4 ---> this is the array
+
+		permutations are in this form.
+	
+		right left multiplication
+		(3 1 2 4 ) * (1 3 2 4) = (3 2 1 4) 
+
+		*/
+
+		for (int i = 0; i< amountOfElements; i++){
+			arr3[i] = arr1[arr2[i]-1];
+		}
+
+		return new Permutation(arr3);
+	
 	}
 
 	public String toString(){

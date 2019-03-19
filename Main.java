@@ -23,15 +23,19 @@ public class Main {
 		Matrix matrixD = matrixA.add(matrixA);
 		//System.out.println(matrixD.print());
 
-		int[] permarr1 = {3,4,2,1};
+		int[] permarr1 = {3,4,2,1,5};
+
+		/*
+			(3,4,2,1,5) (3,4,2,1,5) = (2,1,4,3,5)
+
+		*/
 
 		Permutation perm1 = new Permutation(permarr1);
 
 		//System.out.println(patrickMath.factorial(10));
 
-		SymmetricGroup s3 = new SymmetricGroup(8);
-
-		System.out.println(s3.toString()); 
+		SymmetricGroup s3 = new SymmetricGroup(5);
+		System.out.println(s3.operation(perm1,perm1));
 
 
 
