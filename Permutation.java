@@ -32,6 +32,7 @@ public class Permutation {
 
 	}
 
+	//thanks glen for the made up name... (I have no idea what disorderness is actually called)
 	public int disorderness(){
 		int disorder = 0;
 		for (int i = 0; i < this.permArray.length;i++) {
@@ -54,6 +55,9 @@ public class Permutation {
 		}
 	}
 
+	public int getElement(int index){
+		return permArray[index];
+	}
 
 
 

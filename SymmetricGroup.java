@@ -27,7 +27,7 @@ public class SymmetricGroup extends Group<Permutation>{
 			
 	}
 	//implementing the heap permutation recursively (will look in doing it non recursively)
-	static int counter = 0;
+	int counter = 0;
 	public void heapPermutation(int[] a, int size){
 		
 
@@ -40,6 +40,10 @@ public class SymmetricGroup extends Group<Permutation>{
 				System.out.print(a[i]);
 			}*/
 			counter++;
+
+			if(counter == groupElements.length){
+				counter = 0;
+			}
 		}
 
 		for (int i = 0; i<size; i++){
@@ -120,6 +124,10 @@ public class SymmetricGroup extends Group<Permutation>{
 			container += "\r\n";
 		}
 		return container;
+	}
+
+	public int getSize(){
+		return groupElements.length;
 	}
 	
 

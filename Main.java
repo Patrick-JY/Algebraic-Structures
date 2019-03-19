@@ -32,10 +32,11 @@ public class Main {
 
 		Permutation perm1 = new Permutation(permarr1);
 
-		//System.out.println(patrickMath.factorial(10));
+		System.out.println(patrickMath.factorial(10));
 
-		SymmetricGroup s3 = new SymmetricGroup(5);
+		SymmetricGroup s3 = new SymmetricGroup(3);
 		System.out.println(s3.operation(perm1,perm1));
+		System.out.println(matrixA.getDeterminant());
 
 
 
