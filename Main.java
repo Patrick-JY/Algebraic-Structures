@@ -38,6 +38,11 @@ public class Main {
 		System.out.println(s3.operation(perm1,perm1));
 		System.out.println(matrixA.getDeterminant());
 
+		double[][] arrC = {{4,25,78,21},{54,212,12,12},{1234,123,12,123343},{12,34212,123,1234}};
+
+		Matrix matrixC = new Matrix(arrC);
+		System.out.println(matrixC.getDeterminant().toPlainString());
+
 
 
 

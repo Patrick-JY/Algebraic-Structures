@@ -1,3 +1,4 @@
+import java.math.*;
 public class Matrix {
 	private int rownum;
 	private int colnum;
@@ -19,7 +20,7 @@ public class Matrix {
 		this.colnum = matrixArray[0].length;
 
 		if(this.rownum == this.colnum){
-			symGroup = new SymmetricGroup(2);
+			symGroup = new SymmetricGroup(rownum);
 		}
 		this.matrixArray = matrixArray;
 	}
@@ -102,19 +103,22 @@ public class Matrix {
 		return this.matrixArray[rowCoord][colCoord];
 	}
 
-	public double getDeterminant(){
+	public BigDecimal getDeterminant(){
 		if(rownum != colnum){
 			throw new NoDeterminantException();
 		}
 		else{
-			double det = 0;
+			BigDecimal det = new BigDecimal(0);
 			for (int i = 0; i<symGroup.getSize();i++){
-				double temp = 1;
+				BigDecimal temp = new BigDecimal(1);
 				Permutation theta = symGroup.getElement(i);
 				for(int j = 0; j<rownum;j++){
-					temp = temp * matrixArray[j][theta.getElement(j)-1]; //because computer science likes to count from 0
+					temp = temp.multiply(new BigDecimal(matrixArray[j][theta.getElement(j)-1])); //because computer science likes to count from 0
 				}
-				det += theta.signature() * temp;
+				if(theta.signature() == -1){
+					temp = temp.negate();
+				}
+				det = det.add(temp);
 
 				
 			}
