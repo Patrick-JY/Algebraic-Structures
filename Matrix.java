@@ -5,11 +5,12 @@ public class Matrix {
 	private double[][] matrixArray;
 	//private SymmetricGroup symGroup = null;
 
-	//creates an empty matrix with specified dimensions.
+	//creates an the empty matrix with specified dimensions.
+	//and if its a square matrix it makes it the identity matrix
 	public Matrix(int rownum,int colnum){
-		/*if(rownum == colnum){
-			symGroup = new SymmetricGroup(rownum);
-		}*/
+		if(rownum == colnum){
+			
+		}
 		this.rownum = rownum;
 		this.colnum = colnum;
 		this.matrixArray = new double[rownum][colnum];
@@ -103,6 +104,16 @@ public class Matrix {
 		return this.matrixArray[rowCoord][colCoord];
 	}
 
+	
+	//going to use LU decomposition
+	public BigDecimal getDeterminant(){
+
+	}
+
+
+
+
+	//this function is purely for interesting purposes, its actually a pretty bad algorithm when it comes to run time
 	public BigDecimal getDeterminant(SymmetricGroup symGroup){
 		if(rownum != colnum){
 			throw new NoDeterminantException();

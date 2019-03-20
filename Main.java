@@ -8,8 +8,8 @@ public class Main {
 
 	public static void main(String[] args){
 		//pregenerating the symmetric groups
-		SymmetricGroup[] symgroups = new SymmetricGroup[7];
-		for(int i = 0; i < 7; i++){
+		SymmetricGroup[] symgroups = new SymmetricGroup[10];
+		for(int i = 0; i < 10; i++){
 			symgroups[i] = new SymmetricGroup(i+1);
 		}
 
@@ -45,13 +45,19 @@ public class Main {
 		System.out.println(matrixA.getDeterminant(symgroups[arrA.length-1]));
 
 		double[][] arrC = 
-		{{4,25,78,21,12,123,12},
-{54,212,12,12,123,123,125},
-{1234,123,12,123343,532,252,234},
-{12,34212,123,1234,256,2367,212},
-{12,453,345,6546,465,475,456},
-{1254,345,23534,234543,345,345,345},
-{3453,345346,346345,346342,23423,23543,345}};
+		{{4,25,78,21,12,123,12,123,123,124},
+{54,212,12,12,123,123,125,163,345,345},
+{1234,123,12,123343,532,252,234,34536,363,234},
+{12,34212,123,1234,256,2367,212,123,43235,345},
+{12,453,345,6546,465,475,456,3453,23123,234234},
+{1254,345,23534,234543,345,345,345,23523,3245,2341},
+{3453,345346,346345,346342,23423,23543,345,12432,23523,123423},
+{1,2,3,4,5,6,7,8,9,10},
+{2,4,6,8,10,12,14,16,18,20},
+{6,12,18,24,30,36,42,48,54,60}
+
+
+};
 
 		Matrix matrixC = new Matrix(arrC);
 		System.out.println(matrixC.getDeterminant(symgroups[arrC.length-1]).toPlainString());

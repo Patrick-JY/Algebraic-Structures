@@ -11,7 +11,7 @@ public class SymmetricGroup extends Group<Permutation>{
 		this.amountOfElements = amountOfElements;
 		groupElements = new Permutation[patrickMath.factorial(amountOfElements)];
 		//generating the elements of the group
-		if(amountOfElements < 1 || amountOfElements > 7){
+		if(amountOfElements < 1 || amountOfElements > 10){
 			throw new InvalidSizeException();
 		}
 		else {
